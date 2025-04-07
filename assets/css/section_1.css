@@ -1,0 +1,49 @@
+.video-container{
+    position: relative;
+    height: 0;
+    left: 0;
+    height: 70vh;
+   
+}
+
+.background-video{
+    display: block;
+    position: absolute;
+    height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 1;
+}
+
+.video-gradient{
+    position: absolute;
+    height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right , crimson steelblue);
+    z-index: 2;
+}
+
+.video-section{
+    background-color: rgba(69, 178, 143, 0.397); 
+    border-radius: 3%;
+    color: #fff;
+    margin-left: 1%;
+    height: 65vh;
+    margin-top: 1%;
+}
+.video-section h1{
+    display: block;
+    margin-top: 2%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.video-section p{
+    display: block;
+    margin-top: 2%;
+    text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,46 @@
+.header-logo{
+    height: 500px;
+    background-image: linear-gradient(to bottom right , rgba(0, 128, 0, 0.68) , rgba(78, 196, 229, 0.53)), url(../images/grupo_1.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    padding: 0.1;
+}
+
+.header-title{
+    margin-left: 20%;
+    margin-top: 7%;
+    color: rgba(43, 42, 42, 0.612);
+    width: 60%;
+    
+}
+
+.header-title h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.header-title p{
+    padding: 3%;
+    display: block;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header-image img{
+    display: block;
+    height: 200px;
+    margin-top: 15%;
+    overflow: hidden;
+    margin-left: 5%;
+}
+
+
+
+
+

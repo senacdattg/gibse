@@ -1,0 +1,8 @@
+.img-section-2{
+    width: 500px;
+    background-image: url(../images/aprendices_guaviare.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5% 0 0 5%;
+}

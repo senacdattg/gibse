@@ -1,0 +1,46 @@
+.description{
+    height: 500px;
+    overflow-y: auto;
+}
+
+.image-description{
+   
+   background-image: linear-gradient(to bottom right,  rgba(0, 128, 0, 0.68) , rgba(78, 196, 229, 0.53)), url(../images/grupo_2.jpeg);
+   background-position:center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+
+}
+
+.card-info{
+    width: 65%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card-info ul{
+    display: block;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+.card-info a {
+    display: block;
+    overflow-x: auto;
+    margin: 15% auto;
+    width: 55%;
+}
+.card-info-2{
+    margin-left: 20%;
+}
+
+.card-info-2 a{
+    margin-top: 20%;
+    
+}
+
+.card-info-2 ul{
+    margin-top: -1%;
+}
+
+

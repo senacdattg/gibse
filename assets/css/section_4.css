@@ -1,0 +1,25 @@
+.contact-data{
+    height: 400px;
+    background: linear-gradient(to bottom left, rgba(63, 137, 207, 0.587) , rgba(31, 228, 20, 0.491));
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-y: auto;
+}
+
+.contact-data h1{
+    padding: 2%;
+    color: #444444ab;
+    font-weight: bolder;
+}
+
+.info-container{
+    font-size: 1em;
+    margin: auto;
+    width: 90%;
+    color: #444444ab;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.info-container a {
+    text-decoration: none;
+    color: #444444ab;
+}

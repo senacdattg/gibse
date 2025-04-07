@@ -1,0 +1,69 @@
+.places{
+    margin-left: 20%;
+    margin-bottom: 3%;
+}
+
+.section_3_final{
+    height: 160vh;
+    background-image: url(../images/aprendices_guaviare.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+
+.card-data{
+    margin-top: 3%;
+    height: 70vh;
+    width: 80%;
+    color: #656262;
+    
+}
+
+.card-data{
+    overflow-y: auto;
+}
+
+.acordeon {
+    margin:auto;
+    width: 60%; 
+    height: 60%;
+    border-radius: 1%;
+    background: linear-gradient(to bottom left, rgba(70, 131, 180, 0.372) , rgba(0, 255, 0, 0.313));
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-y: auto;
+}
+
+.acordeon h4{
+    color: white;
+    margin: 2%;
+}
+.accordion-item {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.accordion-body {
+    display: none;
+    padding: 1rem;
+    
+}
+.accordion-item:hover .accordion-body {
+    display: block;
+}
+.accordion-header {
+    background-color: #f8f9fa80;
+    color: white;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    
+}
+.accordion-body {
+    color: #fff;
+    border-top: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+    margin-left: 5%;
+}
