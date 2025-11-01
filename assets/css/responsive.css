@@ -720,7 +720,7 @@ video {
 
     .accordion-header,
     .place-item {
-        -webkit-tap-highlight-color: rgba(40, 167, 69, 0.2);
+        -webkit-tap-highlight-color: rgba(var(--sena-verde-rgb), 0.2);
     }
 }
 
