@@ -145,311 +145,447 @@
                         <div class="card card-data card-hover">
                             <div class="card-body p-4">
                                 <div class="row g-4">
+                                    <!-- Columna 1 -->
                                     <div class="col-lg-4 col-md-6">
-                                        <ul class="places-list">
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">APARTADÓ</span>
-                                                    <span class="place-department">Antioquia</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">ARMENIA</span>
-                                                    <span class="place-department">Quindío</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">BARRANCABERMEJA</span>
-                                                    <span class="place-department">Santander</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">BUGA</span>
-                                                    <span class="place-department">Valle del Cauca</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">CALDAS</span>
-                                                    <span class="place-department">Antioquia</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">CAMPOALEGRE</span>
-                                                    <span class="place-department">Huila</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">CARTAGENA</span>
-                                                    <span class="place-department">Bolívar</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">CAUCASIA</span>
-                                                    <span class="place-department">Antioquia</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">CHÍA</span>
-                                                    <span class="place-department">Cundinamarca</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">CÚCUTA</span>
-                                                    <span class="place-department">Norte de Santander</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">DUITAMA</span>
-                                                    <span class="place-department">Boyacá</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">EL BAGRE</span>
-                                                    <span class="place-department">Antioquia</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">ESPINAL</span>
-                                                    <span class="place-department">Tolima</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">FUSAGASUGÁ</span>
-                                                    <span class="place-department">Cundinamarca</span>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        <!-- AMAZONAS -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Amazonas</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">LETICIA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- ANTIOQUIA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Antioquia</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">APARTADÓ</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">CALDAS</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">CAUCASIA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">EL BAGRE</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">PUERTO BERRIO</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">RIONEGRO</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">SANTAFÉ DE ANTIOQUIA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- ARCHIPIÉLAGO DE SAN ANDRÉS -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Archipiélago de San Andrés</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">SAN ANDRÉS</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- ATLÁNTICO -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Atlántico</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">SABANALARGA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- BOLÍVAR -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Bolívar</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">CARTAGENA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- BOYACÁ -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Boyacá</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">DUITAMA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- CALDAS -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Caldas</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">MANIZALES</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- CASANARE -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Casanare</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">YOPAL</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- CAUCA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Cauca</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">POPAYÁN</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
+
+                                    <!-- Columna 2 -->
                                     <div class="col-lg-4 col-md-6">
-                                        <ul class="places-list">
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">GARZÓN</span>
-                                                    <span class="place-department">Huila</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">GRANADA</span>
-                                                    <span class="place-department">Meta</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">INÍRIDA</span>
-                                                    <span class="place-department">Guainía</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">LA PLATA</span>
-                                                    <span class="place-department">Huila</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">LETICIA</span>
-                                                    <span class="place-department">Amazonas</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">MANIZALES</span>
-                                                    <span class="place-department">Caldas</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">MITÚ</span>
-                                                    <span class="place-department">Vaupés</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">MOCOA</span>
-                                                    <span class="place-department">Putumayo</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">MONTERÍA</span>
-                                                    <span class="place-department">Córdoba</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">MOSQUERA</span>
-                                                    <span class="place-department">Cundinamarca</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">PASTO</span>
-                                                    <span class="place-department">Nariño</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">PEREIRA</span>
-                                                    <span class="place-department">Risaralda</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">PIEDECUESTA</span>
-                                                    <span class="place-department">Santander</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">PITALITO</span>
-                                                    <span class="place-department">Huila</span>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        <!-- CESAR -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Cesar</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">VALLEDUPAR</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- CÓRDOBA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Córdoba</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">MONTERÍA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- CUNDINAMARCA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Cundinamarca</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">CHÍA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">FUSAGASUGÁ</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">MOSQUERA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">VILLETA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- GUAINÍA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Guainía</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">INÍRIDA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- GUAVIARE -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Guaviare</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">SAN JOSÉ DEL GUAVIARE</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- HUILA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Huila</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">CAMPOALEGRE</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">GARZÓN</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">LA PLATA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">PITALITO</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- META -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Meta</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">GRANADA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">VILLAVICENCIO</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- NARIÑO -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Nariño</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">PASTO</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
+
+                                    <!-- Columna 3 -->
                                     <div class="col-lg-4 col-md-12">
-                                        <ul class="places-list">
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">POPAYÁN</span>
-                                                    <span class="place-department">Cauca</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">PUERTO ASIS</span>
-                                                    <span class="place-department">Putumayo</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">PUERTO BERRIO</span>
-                                                    <span class="place-department">Antioquia</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">PUERTO CARREÑO</span>
-                                                    <span class="place-department">Vichada</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">RIONEGRO</span>
-                                                    <span class="place-department">Antioquia</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">SABANALARGA</span>
-                                                    <span class="place-department">Atlántico</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">SAN ANDRÉS</span>
-                                                    <span class="place-department">Archipiélago de San Andrés</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">SAN JOSÉ DEL GUAVIARE</span>
-                                                    <span class="place-department">Guaviare</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">SANTAFÉ DE ANTIOQUIA</span>
-                                                    <span class="place-department">Antioquia</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">TULUÁ</span>
-                                                    <span class="place-department">Valle del Cauca</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">VALLEDUPAR</span>
-                                                    <span class="place-department">Cesar</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">VILLAVICENCIO</span>
-                                                    <span class="place-department">Meta</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">VILLETA</span>
-                                                    <span class="place-department">Cundinamarca</span>
-                                                </div>
-                                            </li>
-                                            <li class="place-item">
-                                                <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
-                                                <div class="place-content">
-                                                    <span class="place-city">YOPAL</span>
-                                                    <span class="place-department">Casanare</span>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                        <!-- NORTE DE SANTANDER -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Norte de Santander</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">CÚCUTA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- PUTUMAYO -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Putumayo</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">MOCOA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">PUERTO ASIS</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- QUINDÍO -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Quindío</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">ARMENIA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- RISARALDA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Risaralda</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">PEREIRA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- SANTANDER -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Santander</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">BARRANCABERMEJA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">PIEDECUESTA</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- TOLIMA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Tolima</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">ESPINAL</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- VALLE DEL CAUCA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Valle del Cauca</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">BUGA</span>
+                                                    </div>
+                                                </li>
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">TULUÁ</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- VAUPÉS -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Vaupés</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">MITÚ</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- VICHADA -->
+                                        <div class="department-group">
+                                            <h5 class="department-title"><i class="bi bi-geo-alt-fill me-2"></i>Vichada</h5>
+                                            <ul class="places-list">
+                                                <li class="place-item">
+                                                    <img src="./assets/images/logo-sena-3.png" alt="SENA" class="place-icon">
+                                                    <div class="place-content">
+                                                        <span class="place-city">PUERTO CARREÑO</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
