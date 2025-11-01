@@ -99,3 +99,20 @@
     margin-right: 0.75rem;
     vertical-align: middle;
 }
+
+@media (max-width: 768px) {
+    .video-container {
+        min-height: 50vh;
+    }
+    
+    .background-video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .video-section {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+}

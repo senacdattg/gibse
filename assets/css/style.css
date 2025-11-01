@@ -100,5 +100,22 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .card-hover:hover {
+        transform: none;
+    }
+    
+    .btn-cta {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 
 
