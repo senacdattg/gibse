@@ -1,25 +1,112 @@
 .contact-data{
-    height: 400px;
-    background: linear-gradient(to bottom left, rgba(63, 137, 207, 0.587) , rgba(31, 228, 20, 0.491));
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    overflow-y: auto;
+    background: linear-gradient(to bottom left, rgba(63, 137, 207, 0.9), rgba(31, 228, 20, 0.8));
+    font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .contact-data h1{
     padding: 2%;
-    color: #444444ab;
-    font-weight: bolder;
+    color: white;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .info-container{
-    font-size: 1em;
+    font-size: 1.1em;
     margin: auto;
     width: 90%;
-    color: #444444ab;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .info-container a {
     text-decoration: none;
-    color: #444444ab;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.info-container a:hover {
+    color: #ffd700;
+    border-bottom-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.contact-item h5 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.contact-item p {
+    color: white;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.contact-channels {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-channels h5 {
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info li {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.info li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.info li i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.text_contact {
+    font-size: 1.2rem;
+    line-height: 1.8;
 }

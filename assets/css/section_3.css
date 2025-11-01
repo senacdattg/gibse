@@ -1,69 +1,397 @@
-.places{
-    margin-left: 20%;
-    margin-bottom: 3%;
-}
 
 .section_3_final{
-    height: 160vh;
-    background-image: url(../images/aprendices_guaviare.png);
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/aprendices_guaviare.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    
-    
+    background-attachment: fixed;
+    padding: 5rem 0;
+}
+
+.curriculum-section {
+    margin: 0;
+}
+
+.places-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0 !important;
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #2b3a42;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #6c757d;
+    margin-bottom: 0;
 }
 
 .card-data{
-    margin-top: 3%;
-    height: 70vh;
-    width: 80%;
     color: #656262;
-    
+    background: rgba(255, 255, 255, 1) !important;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(40, 167, 69, 0.1);
 }
 
-.card-data{
-    overflow-y: auto;
+.card-data:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.card-data .card-body {
+    padding: 2.5rem;
+}
+
+.places-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.place-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(40, 167, 69, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.place-item:hover {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.08), rgba(40, 167, 69, 0.03));
+    border-color: rgba(40, 167, 69, 0.3);
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.15);
+}
+
+.place-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.place-item:hover .place-icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 4px 8px rgba(40, 167, 69, 0.3));
+}
+
+.sena-icon-title {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.place-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.place-city {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2b3a42;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.place-item:hover .place-city {
+    color: #28a745;
+}
+
+.place-department {
+    font-size: 0.875rem;
+    color: #6c757d;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .acordeon {
-    margin:auto;
-    width: 60%; 
-    height: 60%;
-    border-radius: 1%;
-    background: linear-gradient(to bottom left, rgba(70, 131, 180, 0.372) , rgba(0, 255, 0, 0.313));
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    overflow-y: auto;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #4683b4 0%, #0066CC 50%, #00B050 100%);
+    font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 4rem 3.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.acordeon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.acordeon-header-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    position: relative;
 }
 
 .acordeon h4{
-    color: white;
-    margin: 2%;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
 }
+
+.acordeon-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 1rem;
+}
+
 .accordion-item {
     cursor: pointer;
-    margin-bottom: 1rem;
-    padding-left: 2%;
-    padding-right: 2%;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    transition: all 0.3s ease;
+    position: relative;
 }
+
+.accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-item::before {
+    content: '';
+    position: absolute;
+    left: -3.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom, #00B050, #0066CC);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+    opacity: 0;
+}
+
+.accordion-item:hover::before {
+    height: 60%;
+    opacity: 1;
+}
+
+.accordion-item.active::before {
+    height: 100%;
+    opacity: 1;
+}
+
+.accordion-item.active .accordion-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #2b3a42;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 3px solid rgba(0, 179, 80, 0.25);
+    border-left: 4px solid #00B050;
+    box-shadow: 0 4px 20px rgba(0, 102, 204, 0.15);
+    margin-bottom: 0;
+    transform: none;
+}
+
+.accordion-item.active .accordion-header::before {
+    display: none;
+}
+
+.accordion-item.active .accordion-header h5 {
+    color: #0066CC;
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-shadow: none;
+}
+
+.accordion-item.active .accordion-header h5::before {
+    content: '✓';
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #00B050, #00a046);
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 179, 80, 0.3);
+    flex-shrink: 0;
+}
+
+.accordion-item.active .accordion-header .accordion-icon {
+    color: #00B050;
+    transform: rotate(180deg);
+}
+
 .accordion-body {
     display: none;
-    padding: 1rem;
-    
-}
-.accordion-item:hover .accordion-body {
-    display: block;
-}
-.accordion-header {
-    background-color: #f8f9fa80;
-    color: white;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 0.25rem;
-    
-}
-.accordion-body {
-    color: #fff;
+    padding: 2.5rem 3.5rem 3rem 3.5rem;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    color: #2b3a42;
+    border-radius: 0 0 15px 15px;
+    animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1.9;
+    font-size: 1.08rem;
     border-top: none;
-    border-radius: 0 0 0.25rem 0.25rem;
-    margin-left: 5%;
+    border-left: 4px solid #00B050;
+    box-shadow: 0 6px 25px rgba(0, 102, 204, 0.12);
+    position: relative;
+}
+
+.accordion-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00B050, #0066CC);
+    opacity: 0.3;
+}
+
+.accordion-body > * {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.accordion-body > *:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-body p {
+    margin: 0 0 1.25rem 0;
+    padding: 0 0.5rem;
+    color: #495057;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.85;
+}
+
+.accordion-body p:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+.accordion-header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.18) 100%);
+    color: #ffffff;
+    padding: 1.85rem 2.25rem;
+    margin: 0;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 15px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.accordion-header:hover::before {
+    left: 100%;
+}
+
+.accordion-header h5 {
+    margin: 0;
+    font-weight: 700;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-size: 1.18rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.3px;
+}
+
+.accordion-header:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.3) 100%);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateX(8px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.accordion-header:hover h5 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.accordion-icon {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.4rem;
+    color: #ffffff;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.4));
+    flex-shrink: 0;
+}
+
+.accordion-header:hover .accordion-icon {
+    color: #ffffff;
+    transform: scale(1.15) translateX(-3px);
+}
+
+.accordion-item.active .accordion-body {
+    display: block;
 }
