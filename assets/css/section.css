@@ -1,10 +1,16 @@
 .image-description{
-   background-image: linear-gradient(to bottom right,  rgba(0, 128, 0, 0.68) , rgba(78, 196, 229, 0.53)), url(../images/grupo_2.jpeg);
+   background-image: linear-gradient(to bottom right,  rgba(var(--sena-verde-rgb), 0.68) , rgba(var(--sena-azul-oscuro-rgb), 0.53)), url(../images/grupo_2.jpeg);
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
    position: relative;
+}
+
+@media (max-width: 768px) {
+    .image-description {
+        background-attachment: scroll !important;
+    }
 }
 
 .info-section {
@@ -28,7 +34,7 @@
 }
 
 .card-info .card-header {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    background: linear-gradient(135deg, var(--sena-verde) 0%, var(--sena-verde-oscuro) 100%);
     color: white;
     border-radius: 20px 20px 0 0 !important;
     padding: 1.5rem;
@@ -62,7 +68,7 @@
 
 .program-info-list li:hover {
     padding-left: 10px;
-    background: rgba(40, 167, 69, 0.05);
+    background: rgba(var(--sena-verde-rgb), 0.05);
     margin-left: -10px;
     padding-left: 10px;
     border-radius: 5px;
@@ -73,7 +79,7 @@
 }
 
 .program-info-list li strong {
-    color: #28a745;
+    color: var(--sena-verde);
     font-weight: 600;
     display: inline-block;
     min-width: 180px;

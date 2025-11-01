@@ -1,0 +1,31 @@
+/* ========================================
+   COLORES INSTITUCIONALES SENA 2025
+   ======================================== */
+
+:root {
+    /* Color Principal */
+    --sena-verde: #39A900;
+    /* Verde Institucional - RGB(57, 169, 0) */
+
+    /* Colores Secundarios */
+    --sena-verde-oscuro: #007832;
+    /* RGB(0, 120, 150) */
+    --sena-azul-oscuro: #00304D;
+    /* RGB(0, 48, 77) */
+    --sena-violeta: #71277A;
+    /* RGB(113, 39, 122) */
+    --sena-azul-claro: #50E5F9;
+    /* RGB(80, 229, 249) */
+    --sena-amarillo: #FDC300;
+    /* RGB(253, 195, 0) */
+
+    /* Colores Neutros */
+    --sena-blanco: #FFFFFF;
+    --sena-negro: #000000;
+    --sena-gris-claro: #F6F6F6;
+
+    /* Variaciones para transparencias y gradientes */
+    --sena-verde-rgb: 57, 169, 0;
+    --sena-azul-oscuro-rgb: 0, 48, 77;
+    --sena-verde-oscuro-rgb: 0, 120, 150;
+}

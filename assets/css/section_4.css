@@ -1,5 +1,5 @@
 .contact-data{
-    background: linear-gradient(to bottom left, rgba(63, 137, 207, 0.9), rgba(31, 228, 20, 0.8));
+    background: linear-gradient(to bottom left, rgba(var(--sena-azul-oscuro-rgb), 0.9), rgba(var(--sena-verde-rgb), 0.8));
     font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 3rem;
     border-radius: 20px;
@@ -31,8 +31,8 @@
 }
 
 .info-container a:hover {
-    color: #ffd700;
-    border-bottom-color: #ffd700;
+    color: var(--sena-amarillo);
+    border-bottom-color: var(--sena-amarillo);
     transform: translateY(-2px);
 }
 

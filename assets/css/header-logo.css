@@ -1,6 +1,6 @@
-.header-logo{
+.header-logo {
     height: 500px;
-    background-image: linear-gradient(to bottom right, rgba(0, 128, 0, 0.68), rgba(78, 196, 229, 0.53)), url(../images/grupo_1.jpeg);
+    background-image: linear-gradient(to bottom right, rgba(var(--sena-verde-rgb), 0.68), rgba(var(--sena-azul-oscuro-rgb), 0.53)), url(../images/grupo_1.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,12 +24,12 @@
     transform: scale(1.05);
 }
 
-.header-title{
+.header-title {
     color: rgba(43, 42, 42, 0.9);
     text-align: center;
 }
 
-.header-title h1{
+.header-title h1 {
     font-family: 'Inter', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 800;
@@ -39,16 +39,16 @@
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
 }
 
-.header-title p{
+.header-title p {
     display: block;
     text-align: center;
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 600;
-    color: #28a745;
+    color: var(--sena-verde);
     margin: 0;
 }
 
-.header-image img{
+.header-image img {
     display: block;
     height: 200px;
     margin-top: 15%;
@@ -67,130 +67,144 @@
     .header-logo {
         height: 250px;
     }
-    
+
     .logo-sena {
         max-height: 120px;
     }
-    
+
     .contact-info-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .section-title {
         font-size: 1.5rem !important;
     }
-    
+
     .section-subtitle {
         font-size: 0.95rem !important;
     }
-    
+
     .place-item {
         padding: 0.875rem 1rem !important;
     }
-    
+
     .place-city {
         font-size: 0.9rem !important;
     }
-    
+
     .place-department {
         font-size: 0.8rem !important;
     }
-    
+
+    .department-group {
+        margin-bottom: 2rem !important;
+    }
+
+    .department-title {
+        font-size: 1rem !important;
+        margin-bottom: 0.75rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    .place-item {
+        padding: 0.75rem 0.875rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
     .place-icon {
-        width: 28px !important;
-        height: 28px !important;
+        width: 24px !important;
+        height: 24px !important;
         margin-right: 0.75rem !important;
     }
-    
+
+    .place-city {
+        font-size: 0.875rem !important;
+    }
+
     .sena-icon-title {
         width: 36px !important;
         height: 36px !important;
     }
-    
+
     .section_3_final {
         padding: 3rem 0 !important;
     }
-    
+
     .acordeon {
         padding: 2.5rem 1.5rem !important;
         border-radius: 20px !important;
     }
-    
+
     .acordeon-header-section {
         margin-bottom: 2rem !important;
         padding-bottom: 1.5rem !important;
     }
-    
+
     .acordeon h4 {
         font-size: 1.5rem !important;
     }
-    
+
     .acordeon-subtitle {
         font-size: 0.9rem !important;
         margin-top: 0.75rem !important;
     }
-    
+
     .accordion-item::before {
         display: none !important;
     }
-    
+
     .accordion-header {
         padding: 1.25rem 1.5rem !important;
     }
-    
+
     .accordion-header h5 {
         font-size: 1rem !important;
     }
-    
+
     .accordion-item.active .accordion-header h5 {
         font-size: 1.1rem !important;
     }
-    
+
     .accordion-item.active .accordion-header h5::before {
         width: 24px !important;
         height: 24px !important;
         font-size: 1.2rem !important;
     }
-    
+
     .accordion-body {
         padding: 2rem 1.75rem 2.25rem 1.75rem !important;
         font-size: 0.95rem !important;
     }
-    
+
     .accordion-body p {
         padding: 0 0.25rem !important;
     }
-    
+
     .accordion-item {
         margin-bottom: 1rem !important;
     }
-    
+
     .video-container {
         min-height: 60vh !important;
     }
-    
+
     .video-section {
         padding: 2rem !important;
         margin: 2rem auto !important;
     }
-    
+
     .video-title {
         font-size: 1.5rem !important;
         margin-bottom: 1rem !important;
     }
-    
+
     .video-text {
         font-size: 1rem !important;
         margin-bottom: 1rem !important;
     }
-    
+
     .list_1 li {
         padding: 1rem !important;
         font-size: 0.95rem !important;
     }
 }
-
-
-
-
-
