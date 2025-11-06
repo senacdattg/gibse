@@ -1,0 +1,18 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: gibse-web
+    ports:
+      - "127.0.0.1:8080:80"
+    restart: unless-stopped
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    networks:
+      - gibse-network
+
+networks:
+  gibse-network:
+    driver: bridge
+

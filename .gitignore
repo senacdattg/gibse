@@ -1,0 +1,34 @@
+# Logs
+*.log
+webhook.log
+
+# Docker
+.docker/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de configuración local
+.env
+.env.local
+.env.*.local
+
+# Mantener .env.example en el repositorio
+!.env.example
+
+# Backup files
+*.bak
+*.backup
+
