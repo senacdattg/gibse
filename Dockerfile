@@ -10,18 +10,14 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 
 RUN a2enmod rewrite headers expires
 
-RUN apt-get update && apt-get install -y \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
 COPY . ${APACHE_DOCUMENT_ROOT}/
 
 RUN chown -R www-data:www-data ${APACHE_DOCUMENT_ROOT} \
     && chmod -R 755 ${APACHE_DOCUMENT_ROOT}
 
-EXPOSE 80
-
 WORKDIR ${APACHE_DOCUMENT_ROOT}
+
+EXPOSE 80
 
 CMD ["apache2-foreground"]
 

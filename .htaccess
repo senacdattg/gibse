@@ -1,0 +1,22 @@
+# Permitir acceso al webhook
+<FilesMatch "^webhook\.php$">
+    Require all granted
+</FilesMatch>
+
+# Configuración general
+RewriteEngine On
+RewriteBase /
+
+# Redirigir a HTTPS (después de configurar SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevenir acceso a archivos sensibles
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Prevenir acceso a carpetas de configuración
+RedirectMatch 403 ^/docker/
+RedirectMatch 403 ^/scripts/
+
