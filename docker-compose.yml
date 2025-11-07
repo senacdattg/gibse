@@ -31,7 +31,7 @@ services:
     profiles:
       - prod
     ports:
-      - "127.0.0.1:80:80"
+      - "127.0.0.1:8081:80"  # Puerto interno 8081 para evitar conflicto con Nginx en 80
     # Sin volúmenes en producción (código dentro de la imagen)
 
 networks:
