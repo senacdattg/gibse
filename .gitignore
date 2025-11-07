@@ -1,9 +1,16 @@
 # Logs
 *.log
-webhook.log
+logs/
+log/
+error.log
+access.log
+apache-error.log
+nginx-error.log
+nginx-access.log
 
 # Docker
 .docker/
+docker-compose.override.yml
 
 # Sistema operativo
 .DS_Store
@@ -22,13 +29,12 @@ Thumbs.db
 
 # Archivos de configuración local
 .env
-.env.local
-.env.*.local
-
-# Mantener .env.example en el repositorio
+.env.*
 !.env.example
+.env.local
+.env.production
+.env.development
 
 # Backup files
 *.bak
 *.backup
-
