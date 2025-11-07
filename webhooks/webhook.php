@@ -15,7 +15,7 @@ require_once __DIR__ . '/../config/env-loader.php';
 
 // Obtener configuración desde .env
 $SECRET = getEnvVar('WEBHOOK_SECRET', '');
-$PROJECT_DIR = getEnvVar('PROJECT_DIR', '/var/www/gibse');
+$PROJECT_DIR = getEnvVar('PROJECT_DIR', '/var/www/cdattg_gibse');
 $LOG_FILE = getEnvVar('LOG_FILE', $PROJECT_DIR . '/webhook.log');
 $UPDATE_SCRIPT = getEnvVar('UPDATE_SCRIPT', $PROJECT_DIR . '/scripts/update.sh');
 $GIT_BRANCH = getEnvVar('GIT_BRANCH', 'main');

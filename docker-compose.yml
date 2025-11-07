@@ -3,24 +3,37 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: gibse-web
-    ports:
-      # DESARROLLO: Usa esta línea (puerto 8080)
-      - "${DOCKER_PORT:-8080}:80"
-      # PRODUCCIÓN: Comenta la línea anterior y descomenta esta (puerto 80 en localhost)
-      # - "127.0.0.1:80:80"
-
-      # DESARROLLO: Descomenta para hot-reload de archivos
-      # PRODUCCIÓN: Comenta o elimina esta sección (archivos van dentro de la imagen)
-    volumes:
-      - .:/var/www/html
-
+    container_name: cdattg-gibse-web
     restart: unless-stopped
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
     networks:
-      - gibse-network
+      - cdattg-gibse-network
+    # Perfil de desarrollo: puerto 8080 y volúmenes para hot-reload
+    profiles:
+      - dev
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+
+  web-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cdattg-gibse-web
+    restart: unless-stopped
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    networks:
+      - cdattg-gibse-network
+    # Perfil de producción: solo localhost, sin volúmenes
+    profiles:
+      - prod
+    ports:
+      - "127.0.0.1:80:80"
+    # Sin volúmenes en producción (código dentro de la imagen)
 
 networks:
-  gibse-network:
+  cdattg-gibse-network:
     driver: bridge

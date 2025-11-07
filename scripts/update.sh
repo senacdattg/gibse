@@ -12,12 +12,21 @@ if [ -f "$PROJECT_ROOT/.env" ]; then
 fi
 
 # Variables con valores por defecto si no están en .env
-PROJECT_DIR="${PROJECT_DIR:-/var/www/gibse}"
-COMPOSE_FILE="${DOCKER_COMPOSE_FILE:-docker-compose.yml}"
+PROJECT_DIR="${PROJECT_DIR:-/var/www/cdattg_gibse}"
+ENVIRONMENT="${ENVIRONMENT:-development}"
 GIT_BRANCH="${GIT_BRANCH:-main}"
+
+# Seleccionar perfil de Docker Compose según el entorno
+if [ "$ENVIRONMENT" = "production" ]; then
+    COMPOSE_PROFILE="prod"
+else
+    COMPOSE_PROFILE="dev"
+fi
 
 echo "🔄 Iniciando actualización del sitio..."
 echo "🌿 Rama configurada: $GIT_BRANCH"
+echo "🔧 Entorno: $ENVIRONMENT"
+echo "📦 Perfil Docker Compose: $COMPOSE_PROFILE"
 
 cd $PROJECT_DIR
 
@@ -27,11 +36,11 @@ git checkout $GIT_BRANCH
 git pull origin $GIT_BRANCH
 
 echo "🏗️ Reconstruyendo contenedor Docker..."
-docker-compose -f $COMPOSE_FILE build --no-cache
+docker-compose --profile $COMPOSE_PROFILE build --no-cache
 
 echo "🔄 Reiniciando contenedor..."
-docker-compose -f $COMPOSE_FILE down
-docker-compose -f $COMPOSE_FILE up -d
+docker-compose --profile $COMPOSE_PROFILE down
+docker-compose --profile $COMPOSE_PROFILE up -d
 
 echo "🧹 Limpiando imágenes antiguas..."
 docker image prune -f
@@ -39,9 +48,9 @@ docker image prune -f
 echo "✅ Actualización completada!"
 echo ""
 echo "📊 Estado del contenedor:"
-docker ps | grep gibse-web
+docker ps | grep cdattg-gibse-web
 
 echo ""
 echo "📝 Logs recientes:"
-docker logs --tail 20 gibse-web
+docker logs --tail 20 cdattg-gibse-web
 
