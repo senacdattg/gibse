@@ -334,7 +334,7 @@ Un **Registro A** (Address) es un tipo de registro DNS que apunta un dominio o s
 
 Si `dataguaviare.com.co` está gestionado en otro proveedor (GoDaddy, Namecheap, etc.), debes configurar el DNS allí, no en Hostinger.
 
-### Paso 3: Crear el Registro A para el Subdominio
+### Paso 3: Crear o Verificar el Registro A para el Subdominio
 
 En la sección de **Zona DNS**, busca el botón **Agregar registro** o **Add Record**.
 
@@ -344,13 +344,52 @@ En la sección de **Zona DNS**, busca el botón **Agregar registro** o **Add Rec
 |-------|-------|-------------|
 | **Tipo** | `A` | Tipo de registro DNS |
 | **Nombre/Host** | `gibse` | Solo el subdominio (sin el dominio completo) |
-| **Puntos a/Value** | `185.123.45.67` | La IP de tu VPS (reemplaza con tu IP real) |
+| **Apunta a/Puntos a/Value** | `185.123.45.67` | La IP de tu VPS (reemplaza con tu IP real) |
 | **TTL** | `3600` o `Auto` | Tiempo de vida del registro (1 hora) |
 
 **⚠️ IMPORTANTE:**
 - **Nombre:** Solo escribe `gibse` (NO escribas `gibse.dataguaviare.com.co`)
+- **Apunta a:** Debe contener la IP pública de tu VPS (este campo NO puede estar vacío)
 - **IP:** Debe ser la IP pública de tu VPS
 - **TTL:** Puedes dejar el valor por defecto o usar 3600 segundos
+
+### Problemas Comunes con Registros A
+
+#### ❌ El campo "Apunta a" está vacío
+
+**Síntoma:** El registro A existe pero el dominio no funciona.
+
+**Solución:**
+1. Edita el registro A existente
+2. Completa el campo **"Apunta a"** con la IP de tu VPS
+3. Guarda los cambios
+
+#### ❌ El registro A no existe
+
+**Solución:**
+1. Haz clic en **Agregar registro**
+2. Configura todos los campos (especialmente **"Apunta a"** con la IP)
+3. Guarda
+
+#### ❌ El nombre del registro es incorrecto
+
+**Síntoma:** El registro dice `gibse.dataguaviare.com.co` en lugar de solo `gibse`
+
+**Solución:**
+1. Elimina el registro incorrecto
+2. Crea uno nuevo con el nombre correcto: solo `gibse`
+
+#### ❌ Hay múltiples registros A para "gibse"
+
+**Solución:**
+1. Elimina todos los registros A duplicados
+2. Deja solo UN registro A con la IP correcta
+
+#### ❌ El registro es CNAME en lugar de A
+
+**Solución:**
+1. Elimina el registro CNAME
+2. Crea un nuevo registro de tipo **A** con la IP de tu VPS
 
 ### Paso 4: Guardar y Esperar la Propagación
 
@@ -799,6 +838,42 @@ sudo certbot renew
 ---
 
 ## 🐛 Solución de Problemas
+
+### El dominio no funciona (gibse.dataguaviare.com.co no carga)
+
+**Síntomas:** El proyecto funciona en Docker pero el dominio no responde o muestra error.
+
+**Causa más común:** El registro A en Hostinger está mal configurado o el campo "Apunta a" está vacío.
+
+**Solución paso a paso:**
+
+1. **Verifica el registro A en Hostinger:**
+   - Panel Hostinger → Dominios → `dataguaviare.com.co` → Zona DNS
+   - Busca un registro tipo **A** con nombre `gibse`
+   - **Verifica que el campo "Apunta a" NO esté vacío** (debe tener la IP de tu VPS)
+
+2. **Si el campo "Apunta a" está vacío:**
+   - Edita el registro A
+   - Completa el campo **"Apunta a"** con la IP de tu VPS
+   - Guarda los cambios
+   - Espera 5-15 minutos para la propagación DNS
+
+3. **Obtén la IP de tu VPS:**
+   - Panel Hostinger → VPS → Tu VPS → Ver IP
+   - O desde SSH: `curl ifconfig.me`
+
+4. **Verifica que el DNS funciona:**
+   ```bash
+   # Windows (PowerShell)
+   nslookup gibse.dataguaviare.com.co
+   
+   # Linux/Mac
+   dig gibse.dataguaviare.com.co
+   ```
+   Debe mostrar la IP de tu VPS. Si muestra otra IP o no resuelve, el registro A está mal.
+
+5. **Verifica otros problemas comunes:**
+   - Ver sección [Problemas Comunes con Registros A](#problemas-comunes-con-registros-a)
 
 ### El sitio no carga
 
