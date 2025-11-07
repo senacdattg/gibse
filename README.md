@@ -20,19 +20,19 @@ Aplicación web PHP para el programa de Tecnología en Gestión Integral de la B
 ## 📁 Estructura del Proyecto
 
 ```
-gibse/
-├── assets/              # Recursos estáticos (CSS, JS, imágenes, videos)
-├── config/              # Configuraciones (env-loader.php)
-├── docker/              # Configuraciones de Docker
-│   └── nginx.conf       # Configuración de Nginx para producción
-├── docker-compose.yml   # Docker Compose (un solo archivo para dev/prod)
-├── scripts/             # Scripts de actualización
-│   └── update.sh        # Script para actualizar el sitio
-├── webhooks/            # Webhooks para actualización automática
-│   └── webhook.php      # Endpoint para recibir webhooks de Git
-├── Dockerfile           # Configuración de la imagen Docker
-├── index.php            # Página principal
-└── .htaccess            # Configuración de Apache
+cdattg_gibse/
+├── assets/                  # Recursos estáticos (CSS, JS, imágenes, videos)
+├── config/                  # Configuraciones (env-loader.php)
+├── docker/                  # Configuraciones de Docker
+│   └── nginx.conf           # Configuración de Nginx para producción
+├── docker-compose.yml       # Docker Compose con profiles (dev/prod)
+├── scripts/                 # Scripts de actualización
+│   └── update.sh            # Script para actualizar el sitio (detecta entorno automáticamente)
+├── webhooks/                # Webhooks para actualización automática
+│   └── webhook.php          # Endpoint para recibir webhooks de Git
+├── Dockerfile               # Configuración de la imagen Docker
+├── index.php                # Página principal
+└── .htaccess                # Configuración de Apache
 ```
 
 ---
@@ -76,16 +76,19 @@ gibse/
 
 ```bash
 # Opción 1: Usando Docker Compose (Recomendado)
-docker-compose up -d --build
+# Para desarrollo local:
+docker-compose --profile dev up -d --build
 
 # Opción 2: Construir y ejecutar manualmente
-docker build -t gibse-app .
-docker run -d --name gibse-web -p 8080:80 gibse-app
+docker build -t cdattg-gibse-app .
+docker run -d --name cdattg-gibse-web -p 8080:80 cdattg-gibse-app
 ```
 
 El sitio estará disponible en: `http://localhost:8080`
 
-**💡 Nota:** El archivo `docker-compose.yml` viene configurado por defecto para desarrollo (puerto 8080, con volúmenes para hot-reload).
+**💡 Nota:** 
+- **Desarrollo local:** Usa `docker-compose --profile dev up -d --build` (puerto 8080, con volúmenes para hot-reload)
+- **Producción:** El script `update.sh` detecta automáticamente `ENVIRONMENT=production` y usa el perfil `prod` (puerto 80 en localhost, sin volúmenes)
 
 ---
 
@@ -110,14 +113,14 @@ ssh usuario@tu-ip-vps
 ```bash
 # En el VPS
 cd /var/www
-git clone tu-repositorio.git gibse
-cd gibse
+git clone tu-repositorio.git cdattg_gibse
+cd cdattg_gibse
 ```
 
 #### Opción B: Usando SCP (desde tu máquina local)
 
 ```bash
-scp -r . usuario@tu-ip-vps:/var/www/gibse
+scp -r . usuario@tu-ip-vps:/var/www/cdattg_gibse
 ```
 
 #### Opción C: Usando SFTP
@@ -127,14 +130,15 @@ Usa un cliente como FileZilla o WinSCP para subir todos los archivos.
 ### Paso 3: Configurar Variables de Entorno
 
 ```bash
-cd /var/www/gibse
+cd /var/www/cdattg_gibse
 cp .env.example .env
 nano .env
 ```
 
 **Configura al menos:**
 - `DOMAIN` - Tu dominio (gibse.dataguaviare.com.co)
-- `PROJECT_DIR` - Ruta del proyecto (/var/www/gibse)
+- `PROJECT_DIR` - Ruta del proyecto (/var/www/cdattg_gibse)
+- `ENVIRONMENT` - Entorno: `production` o `development` (importante para Docker)
 - `WEBHOOK_SECRET` - Secreto para el webhook (genera uno: `openssl rand -hex 32`)
 - `GIT_BRANCH` - Rama de Git a usar (main para producción, develop para desarrollo)
 
@@ -180,7 +184,7 @@ fi
 
 # Copiar configuración de Nginx
 DOMAIN="gibse.dataguaviare.com.co"
-sudo cp /var/www/gibse/docker/nginx.conf /etc/nginx/sites-available/$DOMAIN
+sudo cp /var/www/cdattg_gibse/docker/nginx.conf /etc/nginx/sites-available/$DOMAIN
 
 # Habilitar el sitio
 sudo ln -sf /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/$DOMAIN
@@ -192,61 +196,76 @@ sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-### Paso 6: Configurar Docker Compose para Producción
+### Paso 6: Configurar el Entorno en .env
 
-**⚠️ IMPORTANTE:** Antes de construir el contenedor, debes configurar `docker-compose.yml` para producción. El archivo viene configurado por defecto para desarrollo (puerto 8080, con volúmenes).
+**✅ AUTOMATIZADO:** El sistema detecta automáticamente el entorno según la variable `ENVIRONMENT` en tu archivo `.env`. No necesitas editar `docker-compose.yml` manualmente.
 
 ```bash
-cd /var/www/gibse
-nano docker-compose.yml
+cd /var/www/cdattg_gibse
+nano .env
 ```
 
-**Modifica las siguientes líneas:**
+**Configura la variable `ENVIRONMENT`:**
 
-1. **Puertos:** Comenta la línea de desarrollo y descomenta la de producción:
-   ```yaml
-   ports:
-     # DESARROLLO: Usa esta línea (puerto 8080)
-     # - "${DOCKER_PORT:-8080}:80"  # ← Comenta esta línea
-     
-     # PRODUCCIÓN: Descomenta esta línea (puerto 80 en localhost)
-     - "127.0.0.1:80:80"              # ← Descomenta esta línea
-   ```
+```env
+# Para PRODUCCIÓN:
+ENVIRONMENT=production
 
-2. **Volúmenes:** Comenta o elimina la sección de volúmenes:
-   ```yaml
-   # DESARROLLO: Descomenta para hot-reload de archivos
-   # PRODUCCIÓN: Comenta o elimina esta sección (archivos van dentro de la imagen)
-   # volumes:
-   #   - .:/var/www/html  # ← Comenta esta sección
-   ```
-
-**Resultado final para producción:**
-```yaml
-ports:
-  - "127.0.0.1:80:80"
-
-# Sin sección volumes (comentada o eliminada)
+# Para DESARROLLO (si es un servidor de desarrollo):
+ENVIRONMENT=development
 ```
+
+**💡 Cómo funciona:**
+
+El sistema usa **Docker Compose profiles** (una práctica estándar en proyectos profesionales):
+
+- **`ENVIRONMENT=production`**: Activa el perfil `prod`
+  - Puerto: `127.0.0.1:80` (solo localhost, Nginx como reverse proxy)
+  - Sin volúmenes (código dentro de la imagen Docker)
+  
+- **`ENVIRONMENT=development`**: Activa el perfil `dev`
+  - Puerto: `8080` (accesible desde fuera)
+  - Con volúmenes (hot-reload de archivos)
+
+**✅ Ventajas de esta solución:**
+
+- ✅ Un solo archivo `docker-compose.yml` (práctica profesional estándar)
+- ✅ Usa Docker Compose profiles nativos (no archivos separados)
+- ✅ No necesitas editar `docker-compose.yml` manualmente
+- ✅ Los cambios en Git no sobrescriben tu configuración
+- ✅ Funciona perfectamente con el webhook automatizado
 
 Guarda el archivo (Ctrl+X, luego Y, luego Enter).
-
-**💡 Nota:** En producción, el contenedor solo escucha en `127.0.0.1:80` (localhost), por lo que Nginx actúa como reverse proxy. Esto es más seguro que exponer el puerto directamente.
 
 ### Paso 7: Construir y Ejecutar el Contenedor Docker
 
 ```bash
-cd /var/www/gibse
+cd /var/www/cdattg_gibse
 
-# Construir y ejecutar en un solo comando
-docker-compose up -d --build
+# El script update.sh detecta automáticamente el entorno desde .env
+# y activa el perfil Docker Compose correcto (prod o dev)
+./scripts/update.sh
 
-# O por separado:
-# docker-compose build
-# docker-compose up -d
+# O manualmente con docker-compose:
+# Para producción:
+# docker-compose --profile prod up -d --build
+
+# Para desarrollo:
+# docker-compose --profile dev up -d --build
 
 # Verificar que está corriendo
-docker ps | grep gibse-web
+docker ps | grep cdattg-gibse-web
+```
+
+**💡 Nota:** El script `update.sh` ya hace `git pull`, `docker-compose build` y `docker-compose up` automáticamente usando el perfil correcto según `ENVIRONMENT`.
+
+**Uso manual:**
+```bash
+# Desarrollo
+docker-compose --profile dev up -d --build
+
+# Producción
+docker-compose --profile prod up -d --build
 ```
 
 ### Paso 8: Configurar DNS
@@ -373,7 +392,7 @@ DOMAIN=gibse.dataguaviare.com.co
 
 #### Configuración del Servidor
 ```env
-PROJECT_DIR=/var/www/gibse
+PROJECT_DIR=/var/www/cdattg_gibse
 NGINX_SITES=/etc/nginx/sites-available
 NGINX_ENABLED=/etc/nginx/sites-enabled
 ```
@@ -388,28 +407,30 @@ WEBHOOK_SECRET=tu_secreto_super_seguro_aqui
 openssl rand -hex 32
 ```
 
-#### Docker
+#### Docker - Configuración del Entorno
 ```env
-# Nota: DOCKER_PORT solo se usa en desarrollo
-# En producción, edita docker-compose.yml directamente
-DOCKER_PORT=8080  # Solo para desarrollo local
-DOCKER_CONTAINER_NAME=gibse-web
+# Valores posibles: development | production
+ENVIRONMENT=production
+
+# El sistema usa Docker Compose profiles automáticamente:
+# - production → perfil "prod" (puerto 127.0.0.1:80, sin volúmenes)
+# - development → perfil "dev" (puerto 8080, con volúmenes)
+DOCKER_CONTAINER_NAME=cdattg-gibse-web
 ```
 
-**⚠️ IMPORTANTE para Producción:**
-- En producción NO uses `DOCKER_PORT` en `.env`
-- En su lugar, edita `docker-compose.yml` manualmente:
-  - Comenta la línea de desarrollo: `# - "${DOCKER_PORT:-8080}:80"`
-  - Descomenta la línea de producción: `- "127.0.0.1:80:80"`
+**✅ AUTOMATIZADO:**
+- Un solo archivo `docker-compose.yml` con profiles (práctica profesional)
+- El script `update.sh` detecta `ENVIRONMENT` y activa el perfil correcto
+- Los cambios en Git no afectan tu configuración de entorno
 
 #### Logs
 ```env
-LOG_FILE=/var/www/gibse/webhook.log
+LOG_FILE=/var/www/cdattg_gibse/webhook.log
 ```
 
 #### Script de Actualización
 ```env
-UPDATE_SCRIPT=/var/www/gibse/scripts/update.sh
+UPDATE_SCRIPT=/var/www/cdattg_gibse/scripts/update.sh
 ```
 
 #### Configuración de Git
@@ -489,7 +510,7 @@ Cada vez que hagas cambios y quieras actualizar el sitio:
 
 ```bash
 # En el VPS
-cd /var/www/gibse
+cd /var/www/cdattg_gibse
 ./scripts/update.sh
 ```
 
@@ -524,7 +545,7 @@ Este script:
 ssh usuario@tu-ip-vps
 
 # Crear el archivo .env si no existe
-cd /var/www/gibse
+cd /var/www/cdattg_gibse
 cp .env.example .env
 
 # Editar el archivo .env
@@ -545,8 +566,8 @@ chmod 600 .env
 #### Paso 3: Dar Permisos
 
 ```bash
-chmod +x /var/www/gibse/scripts/update.sh
-chmod 644 /var/www/gibse/webhooks/webhook.php
+chmod +x /var/www/cdattg_gibse/scripts/update.sh
+chmod 644 /var/www/cdattg_gibse/webhooks/webhook.php
 ```
 
 #### Paso 4: Probar
@@ -562,7 +583,7 @@ chmod 644 /var/www/gibse/webhooks/webhook.php
 4. Deberías ver una entrega (delivery) reciente
 5. Verifica los logs:
    ```bash
-   tail -f /var/www/gibse/webhook.log
+   tail -f /var/www/cdattg_gibse/webhook.log
    ```
 
 ### Opción 3: Actualización con GitLab
@@ -673,7 +694,7 @@ Antes de desplegar en producción:
 - [ ] Firewall configurado (solo puertos necesarios)
 - [ ] Scripts de desarrollo no ejecutables en producción
 - [ ] Logs con permisos adecuados
-- [ ] `docker-compose.yml` configurado para producción (puerto 80, sin volúmenes)
+- [ ] `ENVIRONMENT=production` configurado en `.env` (el sistema usa automáticamente el perfil `prod`)
 
 ### Seguridad Adicional
 
@@ -691,7 +712,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 ```
 
 3. **Backups automáticos**
-Configura backups regulares de `/var/www/gibse`
+Configura backups regulares de `/var/www/cdattg_gibse`
 
 ### Incidentes de Seguridad
 
@@ -726,31 +747,43 @@ Si sospechas que un secreto ha sido comprometido:
 
 ### Ver logs del contenedor
 ```bash
-docker logs gibse-web
-docker logs -f gibse-web  # Seguir logs en tiempo real
+docker logs cdattg-gibse-web
+docker logs -f cdattg-gibse-web  # Seguir logs en tiempo real
 ```
 
 ### Reiniciar el contenedor
 ```bash
-cd /var/www/gibse
-docker-compose restart
+cd /var/www/cdattg_gibse
+# Desarrollo
+docker-compose --profile dev restart
+
+# Producción
+docker-compose --profile prod restart
 ```
 
 ### Detener el contenedor
 ```bash
-cd /var/www/gibse
-docker-compose down
+cd /var/www/cdattg_gibse
+# Desarrollo
+docker-compose --profile dev down
+
+# Producción
+docker-compose --profile prod down
 ```
 
 ### Ver estado de los contenedores
 ```bash
 docker ps
-docker-compose ps
+# Desarrollo
+docker-compose --profile dev ps
+
+# Producción
+docker-compose --profile prod ps
 ```
 
 ### Ver logs del webhook
 ```bash
-tail -f /var/www/gibse/webhook.log
+tail -f /var/www/cdattg_gibse/webhook.log
 ```
 
 ### Verificar DNS
@@ -770,39 +803,48 @@ sudo certbot renew
 ### El sitio no carga
 
 1. Verifica que el contenedor esté corriendo: `docker ps`
-2. Verifica los logs: `docker logs gibse-web`
+2. Verifica los logs: `docker logs cdattg-gibse-web`
 3. Verifica Nginx: `sudo systemctl status nginx`
 4. Verifica el DNS: `ping gibse.dataguaviare.com.co`
-5. **Verifica que `docker-compose.yml` esté configurado para producción:**
-   - El puerto debe ser `127.0.0.1:80:80` (NO `8080:80`)
-   - Los volúmenes deben estar comentados
-   - Ver [Paso 6 del Despliegue](#paso-6-configurar-docker-compose-para-producción)
+5. **Verifica que `ENVIRONMENT=production` en `.env`:**
+   ```bash
+   grep ENVIRONMENT /var/www/cdattg_gibse/.env
+   # Debe mostrar: ENVIRONMENT=production
+   ```
+   - Si no está configurado, el sistema usa desarrollo por defecto
+   - Ver [Paso 6 del Despliegue](#paso-6-configurar-el-entorno-en-env)
 
 ### El sitio muestra "localhost:8080" en producción
 
-**Causa:** El archivo `docker-compose.yml` no está configurado para producción.
+**Causa:** La variable `ENVIRONMENT` en `.env` no está configurada como `production`.
 
 **Solución:**
-1. Edita `docker-compose.yml`:
+1. Verifica tu archivo `.env`:
    ```bash
-   nano docker-compose.yml
+   grep ENVIRONMENT /var/www/cdattg_gibse/.env
    ```
-2. Asegúrate de que los puertos estén así:
-   ```yaml
-   ports:
-     # - "${DOCKER_PORT:-8080}:80"  # ← Comentado
-     - "127.0.0.1:80:80"              # ← Activo
-   ```
-3. Reinicia el contenedor:
+2. Si no está configurado o dice `development`, edítalo:
    ```bash
-   docker-compose down
-   docker-compose up -d
+   nano /var/www/cdattg_gibse/.env
+   # Cambia a:
+   ENVIRONMENT=production
+   ```
+3. Reinicia el contenedor con el script:
+   ```bash
+   cd /var/www/cdattg_gibse
+   ./scripts/update.sh
+   ```
+   
+   O manualmente:
+   ```bash
+   docker-compose --profile prod down
+   docker-compose --profile prod up -d
    ```
 
 ### Error de permisos
 
 ```bash
-sudo chown -R $USER:$USER /var/www/gibse
+sudo chown -R $USER:$USER /var/www/cdattg_gibse
 ```
 
 ### Puerto 80 ocupado
@@ -841,21 +883,21 @@ sudo systemctl stop apache2  # Si Apache está corriendo
 1. **Verifica que el secreto coincida en .env:**
    ```bash
    # Verificar que el secreto está configurado en .env
-   grep WEBHOOK_SECRET /var/www/gibse/.env
+   grep WEBHOOK_SECRET /var/www/cdattg_gibse/.env
    
    # Verificar que el .env se carga correctamente
-   cd /var/www/gibse
+   cd /var/www/cdattg_gibse
    php -r "require 'config/env-loader.php'; echo getEnvVar('WEBHOOK_SECRET') ? 'OK' : 'FALTA';"
    ```
 
 2. **Verifica los logs:**
    ```bash
-   tail -20 /var/www/gibse/webhook.log
+   tail -20 /var/www/cdattg_gibse/webhook.log
    ```
 
 3. **Verifica que el script tenga permisos:**
    ```bash
-   ls -la /var/www/gibse/scripts/update.sh
+   ls -la /var/www/cdattg_gibse/scripts/update.sh
    # Debe mostrar: -rwxr-xr-x
    ```
 
@@ -868,20 +910,20 @@ sudo systemctl stop apache2  # Si Apache está corriendo
 
 1. **Verifica que Git esté funcionando:**
    ```bash
-   cd /var/www/gibse
+   cd /var/www/cdattg_gibse
    git status
    git pull origin main
    ```
 
 2. **Ejecuta el script manualmente:**
    ```bash
-   cd /var/www/gibse
+   cd /var/www/cdattg_gibse
    ./scripts/update.sh
    ```
 
 3. **Verifica los logs de Docker:**
    ```bash
-   docker logs gibse-web
+   docker logs cdattg-gibse-web
    ```
 
 ### El archivo .env no se carga
@@ -905,11 +947,26 @@ sudo systemctl stop apache2  # Si Apache está corriendo
 ## 🛠️ Tecnologías
 
 - **PHP 8.2** - Lenguaje de programación
-- **Apache** - Servidor web
+- **Apache** - Servidor web dentro del contenedor Docker (sirve la aplicación PHP)
 - **Docker** - Contenedorización
 - **Docker Compose** - Orquestación de contenedores
-- **Nginx** - Reverse proxy en producción
+- **Nginx** - Reverse proxy en el servidor host (solo en producción, para SSL y seguridad)
 - **Let's Encrypt** - Certificados SSL gratuitos
+
+### ¿Por qué Apache y Nginx?
+
+Esta es una arquitectura común y profesional:
+
+- **Apache (dentro del contenedor)**: Sirve la aplicación PHP. Es el servidor web de la aplicación.
+- **Nginx (en el host)**: Actúa como reverse proxy en producción. Maneja:
+  - SSL/HTTPS (certificados Let's Encrypt)
+  - Seguridad (headers, rate limiting)
+  - Proxy hacia el contenedor en `127.0.0.1:80`
+
+**En desarrollo local:** Solo necesitas Apache (el contenedor en puerto 8080).  
+**En producción:** Nginx en el host + Apache en el contenedor trabajan juntos.
+
+Esta separación de responsabilidades es una práctica estándar en la industria.
 
 ---
 
