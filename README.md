@@ -88,7 +88,7 @@ El sitio estará disponible en: `http://localhost:8080`
 
 **💡 Nota:** 
 - **Desarrollo local:** Usa `docker-compose --profile dev up -d --build` (puerto 8080, con volúmenes para hot-reload)
-- **Producción:** El script `update.sh` detecta automáticamente `ENVIRONMENT=production` y usa el perfil `prod` (puerto 80 en localhost, sin volúmenes)
+- **Producción:** El script `update.sh` detecta automáticamente `ENVIRONMENT=production` y usa el perfil `prod` (puerto 8081 en localhost, Nginx hace proxy desde 80, sin volúmenes)
 
 ---
 
@@ -220,7 +220,7 @@ ENVIRONMENT=development
 El sistema usa **Docker Compose profiles** (una práctica estándar en proyectos profesionales):
 
 - **`ENVIRONMENT=production`**: Activa el perfil `prod`
-  - Puerto: `127.0.0.1:80` (solo localhost, Nginx como reverse proxy)
+  - Puerto: `127.0.0.1:8081` (solo localhost, Nginx hace proxy desde puerto 80)
   - Sin volúmenes (código dentro de la imagen Docker)
   
 - **`ENVIRONMENT=development`**: Activa el perfil `dev`
@@ -413,7 +413,7 @@ openssl rand -hex 32
 ENVIRONMENT=production
 
 # El sistema usa Docker Compose profiles automáticamente:
-# - production → perfil "prod" (puerto 127.0.0.1:80, sin volúmenes)
+# - production → perfil "prod" (puerto 127.0.0.1:8081, Nginx hace proxy desde 80, sin volúmenes)
 # - development → perfil "dev" (puerto 8080, con volúmenes)
 DOCKER_CONTAINER_NAME=cdattg-gibse-web
 ```
@@ -961,7 +961,7 @@ Esta es una arquitectura común y profesional:
 - **Nginx (en el host)**: Actúa como reverse proxy en producción. Maneja:
   - SSL/HTTPS (certificados Let's Encrypt)
   - Seguridad (headers, rate limiting)
-  - Proxy hacia el contenedor en `127.0.0.1:80`
+  - Proxy hacia el contenedor en `127.0.0.1:8081`
 
 **En desarrollo local:** Solo necesitas Apache (el contenedor en puerto 8080).  
 **En producción:** Nginx en el host + Apache en el contenedor trabajan juntos.
