@@ -13,7 +13,7 @@ fi
 
 # Variables con valores por defecto si no están en .env
 PROJECT_DIR="${PROJECT_DIR:-/var/www/gibse}"
-COMPOSE_FILE="${DOCKER_COMPOSE_FILE:-docker/docker-compose.prod.yml}"
+COMPOSE_FILE="${DOCKER_COMPOSE_FILE:-docker-compose.yml}"
 GIT_BRANCH="${GIT_BRANCH:-main}"
 
 echo "🔄 Iniciando actualización del sitio..."

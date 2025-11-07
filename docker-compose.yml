@@ -5,9 +5,16 @@ services:
       dockerfile: Dockerfile
     container_name: gibse-web
     ports:
-      - "8080:80"
+      # DESARROLLO: Usa esta línea (puerto 8080)
+      - "${DOCKER_PORT:-8080}:80"
+      # PRODUCCIÓN: Comenta la línea anterior y descomenta esta (puerto 80 en localhost)
+      # - "127.0.0.1:80:80"
+
+      # DESARROLLO: Descomenta para hot-reload de archivos
+      # PRODUCCIÓN: Comenta o elimina esta sección (archivos van dentro de la imagen)
     volumes:
       - .:/var/www/html
+
     restart: unless-stopped
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
