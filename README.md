@@ -568,7 +568,7 @@ sudo systemctl stop apache2  # Si Apache está corriendo
 ## 🛠️ Tecnologías
 
 ### Backend
-- **PHP 8.2** - Lenguaje de programación del lado del servidor
+- **PHP 8.4** - Lenguaje de programación del lado del servidor
 - **Apache** - Servidor web dentro del contenedor Docker
 
 ### Frontend
@@ -613,4 +613,4 @@ SENA - Gestión Integral de la Biodiversidad
 - [Docker Security Best Practices](https://docs.docker.com/engine/security/)
 - [Nginx Security Headers](https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/)
 - [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.3/)
-- [PHP 8.2 Documentation](https://www.php.net/manual/es/)
+- [PHP 8.4 Documentation](https://www.php.net/manual/es/)

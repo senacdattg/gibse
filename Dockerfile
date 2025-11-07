@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4-apache
 
 LABEL maintainer="SENA - Gestión Integral de la Biodiversidad"
 LABEL description="Aplicación web PHP para el programa de Tecnología en Gestión Integral de la Biodiversidad"
