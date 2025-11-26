@@ -39,6 +39,53 @@
     margin-bottom: 0;
 }
 
+.map-interactive-hint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.map-interactive-hint small {
+    padding: 0.5rem 1rem;
+    background: rgba(var(--sena-verde-rgb), 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(var(--sena-verde-rgb), 0.2);
+    color: var(--sena-azul-oscuro) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.map-interactive-hint small:hover {
+    background: rgba(var(--sena-verde-rgb), 0.15);
+    border-color: rgba(var(--sena-verde-rgb), 0.3);
+    transform: scale(1.05);
+}
+
+.map-interactive-hint i {
+    color: var(--sena-verde);
+    font-size: 1rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+.map-container {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.map-container:hover {
+    box-shadow: 0 4px 12px rgba(var(--sena-verde-rgb), 0.2);
+}
+
 .card-data{
     color: #656262;
     background: rgba(255, 255, 255, 1) !important;

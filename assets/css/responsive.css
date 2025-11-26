@@ -270,6 +270,26 @@ video {
         padding: 0 10px;
     }
 
+    .map-interactive-hint {
+        margin-top: 1rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .map-interactive-hint small {
+        font-size: 0.8rem !important;
+        padding: 0.4rem 0.875rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .map-interactive-hint span {
+        text-align: center;
+        display: inline-block;
+    }
+
+    .map-interactive-hint i {
+        font-size: 0.9rem !important;
+    }
+
     .card-data {
         margin: 0;
         border-radius: 15px;
@@ -277,6 +297,10 @@ video {
 
     .card-data .card-body {
         padding: 1.5rem !important;
+    }
+
+    .map-container {
+        height: 400px !important;
     }
 
     .department-group {
@@ -603,6 +627,16 @@ video {
         font-size: 0.8rem !important;
     }
 
+    .map-interactive-hint small {
+        font-size: 0.75rem !important;
+        padding: 0.35rem 0.75rem !important;
+    }
+
+    .map-interactive-hint span {
+        display: block;
+        text-align: center;
+    }
+
     .sena-icon-title {
         width: 28px !important;
         height: 28px !important;
@@ -610,6 +644,10 @@ video {
 
     .card-data .card-body {
         padding: 1.25rem !important;
+    }
+
+    .map-container {
+        height: 350px !important;
     }
 
     .department-title {
