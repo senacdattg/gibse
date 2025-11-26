@@ -6,9 +6,9 @@ LABEL description="Aplicación web PHP para el programa de Tecnología en Gesti�
 ENV APACHE_DOCUMENT_ROOT=/var/www/html
 
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
-    && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
-
-RUN a2enmod rewrite headers expires
+    && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf \
+    && a2enmod rewrite headers expires \
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 COPY . ${APACHE_DOCUMENT_ROOT}/
 
