@@ -27,12 +27,14 @@ services:
       - APACHE_DOCUMENT_ROOT=/var/www/html
     networks:
       - cdattg-gibse-network
-    # Perfil de producción: solo localhost, sin volúmenes
+    # Perfil de producción: solo localhost, sin volúmenes (excepto logs)
     profiles:
       - prod
     ports:
-      - "127.0.0.1:8081:80"  # Puerto interno 8081 para evitar conflicto con Nginx en 80
-    # Sin volúmenes en producción (código dentro de la imagen)
+      - "127.0.0.1:8081:80" # Puerto interno 8081 para evitar conflicto con Nginx en 80
+    volumes:
+      # Solo montar logs para que persistan en el host
+      - ./logs:/var/www/html/logs
 
 networks:
   cdattg-gibse-network:
